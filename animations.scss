@@ -1,0 +1,27 @@
+@mixin animation($name, $animation) {
+    @keyframes #{$name} {
+        @content;
+    }
+
+    .#{$name} {
+        animation: $name $animation;
+    }
+}
+
+// EXAMPLE OF USE
+
+@include animation(animation-spin, 2s linear infinite){
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
+};
+
+// Generated output:
+
+// @keyframes animation-spin {
+//     from { transform: rotate(0deg); }
+//     to { transform: rotate(359deg); }
+// }
+
+// .animation-spin {
+//     animation: animation-spin 2s linear infinite;
+// }

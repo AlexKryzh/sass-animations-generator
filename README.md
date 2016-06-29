@@ -13,8 +13,8 @@ The idea of this code is create a simple way to create animation classes.
 ```
 
 This mixin has 2 parameters: 
-$name - name of class and animation-name value
-$animation - animation parameters, except animation-name
+- $name - name of class and animation-name value
+- $animation - animation parameters, except animation-name
 
 We are using the conten of include for keyframes of animation.
 

@@ -1,5 +1,6 @@
 The idea of this code is create a simple way to create animation classes.
 
+```
 @mixin animation($name, $animation) {
     @keyframes #{$name} {
         @content;
@@ -9,6 +10,7 @@ The idea of this code is create a simple way to create animation classes.
         animation: $name $animation;
     }
 }
+```
 
 This mixin has 2 parameters: 
 $name - name of class and animation-name value
@@ -19,13 +21,16 @@ We are using the conten of include for keyframes of animation.
 -------------------------------------------
 Example:
 
+```
 @include animation(animation-spin, 2s linear infinite){
     from { transform: rotate(0deg); }
     to { transform: rotate(359deg); }
 };
+```
 
 Generated output:
 
+```
 @keyframes animation-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(359deg); }
@@ -34,6 +39,7 @@ Generated output:
 .animation-spin {
     animation: animation-spin 2s linear infinite;
 }
+```
 
 -------------------------------------------
 Prefixes is not included, it can be managed with autoprefixer task 
